@@ -1,0 +1,16 @@
+Questão 1 b)
+O primeiro trecho compila porque aplica o polimorfismo e a relação "é um", onde um ClienteVip é uma subclasse de Cliente, permitindo que um objeto específico seja referenciado por um tipo mais genérico da hierarquia.O segundo trecho não compila porque um objeto da superclasse Cliente não possui os métodos, atributos específicos que foram definidos na sua subclasse ClienteVip, gerando um erro de incompatibilidade de tipos.
+
+Questão 2 b)
+A classe Produto é abstrata e serve apenas como modelo, impedindo a criação de instâncias diretas dela pois faltam regras de preços específicas. Isso protege o projeto contra objetos incompletos ou inconsistentes. Isso funciona graças ao polimorfismo e à vinculação tardia (dynamic binding). O método exibirResumo() chama internamente o calcularPrecoFinal(), que será executado na versão específica da subclasse concreta correspondente ao objeto em execução.
+
+Questão 3 c)
+Foi criada como interface para permitir herança múltipla de comportamento, pois produtos físicos precisam estender a classe Produto mas também podem adotar regras de entrega que não pertencem exclusivamente à árvore de produtos. As principais diferenças são que uma interface define apenas contratos públicos sem estado ou construtores, enquanto uma classe abstrata pode conter atributos de instância, construtores e métodos concretos compartilhados.
+
+Questão 4 c) 
+A saída exibirá os nomes concatenados com seus respectivos preços finais calculados nas subclasses. O mecanismo que decide qual versão executar é o polimorfismo dinâmico, que identifica o tipo real do objeto em tempo de execução. Essa linha não compila diretamente se a referência for do tipo Produto, pois o método calcularFrete pertence à interface Entregavel. Para funcionar, é necessário fazer um cast para Entregavel, diferenciando o tipo da referência do tipo do objeto.
+
+Questão 5 c)
+O compilador obriga a tratar EstoqueInsuficienteException por ser uma exceção verificada. Escolhe-se exceções verificadas para erros previsíveis que o sistema deve recuperar, e não verificadas (runtime) para erros lógicos de programação ou validações imprevistas.
+
+
